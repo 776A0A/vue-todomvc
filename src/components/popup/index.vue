@@ -42,9 +42,11 @@ export default {
     },
     hide() {
       this.isShow = false;
+      document.getElementsByTagName("body")[0].style.overflow = "auto";
     },
     show() {
       this.isShow = true;
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
     }
   }
 };
