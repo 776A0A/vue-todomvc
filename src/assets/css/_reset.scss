@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-size: inherit;
+  color: inherit;
+}
+body,
+#app {
+  height: 100%;
+}
+input {
+  outline: none;
+  border: none;
+  appearance: none;
+  &::placeholder {
+    color: #e6e6e6;
+    font-style: italic;
+  }
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
