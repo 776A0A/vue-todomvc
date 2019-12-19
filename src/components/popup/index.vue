@@ -51,7 +51,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .popup {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -70,6 +70,7 @@ export default {
     flex-flow: column;
     justify-content: center;
     align-content: center;
+    border: 1px solid #ddd;
   }
   &-title {
     padding-bottom: 10px;

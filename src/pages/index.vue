@@ -21,7 +21,7 @@
         <li
           class="todo-line-li"
           v-for="(todo, index) in filteredTodos"
-          :key="todo.content + index"
+          :key="index"
           :class="{'editing': editingTodo}"
         >
           <div class="todo-line">
@@ -98,7 +98,7 @@ export default {
       checkedButton: "all",
       filteredTodos: null,
       editingTodo: null,
-      editingTodoCacheContent: null,
+      editingTodoCacheContent: null
     };
   },
   created() {
@@ -132,7 +132,7 @@ export default {
       this.todos = filters.active(this.todos);
       storage.set("todos", this.todos);
       this.changeCheck(this.checkedButton);
-      this.$refs.popup.hide()
+      this.$refs.popup.hide();
     },
     changeCheck(buttonText) {
       this.checkedButton = buttonText;
@@ -147,7 +147,7 @@ export default {
       this.editingTodo = null;
     },
     confirmEdit() {
-      if (!this.editingTodo.content) {
+      if (this.editingTodo && !this.editingTodo.content) {
         this.todos = this.todos.filter(todo => this.editingTodo !== todo);
         this.changeCheck(this.checkedButton);
       }
